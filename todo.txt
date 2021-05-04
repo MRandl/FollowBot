@@ -1,0 +1,11 @@
+Followbot
+1 - DONE - Demander les clés
+2 - Demander une liste de followings initiale
+3 - Prédire ceux qui FB, puis (tous ?) les follow
+4 - Répéter:
+    - Attendre une semaine/un certain temps -> sauvegarder sur le disque et restaurer l'état après
+    - Récupérer ceux qui ont FB
+    - Mettre à jour le modèle
+    - Choisir un de ceux qui a FB, BFS dessus
+    - Prédire ceux qui FB ou non
+    - En follow un certain nombre
