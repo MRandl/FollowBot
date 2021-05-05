@@ -1,10 +1,9 @@
-import asker_main
-import predictor_main
+import asker.asker_main as asker_main
+import prediction.predictor_main as predictor_main
 # 1
 api = asker_main.get_api()
 # 2
 followings_id = asker_main.get_list_followings(api)
-print(followings_id)
 # 3
-predictor_main.predict(['BarackObama'])
+predictor_main.predict(followings_id)
 
