@@ -13,14 +13,15 @@ def get_api():
     key_names = ['oauth login', 'oauth password', 'public access token', 'private access token']
     keys = [False for x in key_names]
     for index in range(len(key_names)):
-      element = input('Please input your ' + key_names[index] + ':\n')
+      element = input('\nPlease input your ' + key_names[index] + ':\n')
       keys[index] = element
       password_file.write(element + '\n')
     password_file.close()
+    print('')
 
   auth = tweepy.OAuthHandler(keys[0], keys[1])
   auth.set_access_token(keys[2], keys[3])
   return tweepy.API(auth, wait_on_rate_limit = True, wait_on_rate_limit_notify = True)
 
-def ask_for_initial_followings():
-  print('asked for initial')
+def get_list_followings():
+  return ['obama']
