@@ -23,7 +23,7 @@ def get_api():
   auth.set_access_token(keys[2], keys[3])
   return tweepy.API(auth, wait_on_rate_limit = True, wait_on_rate_limit_notify = True)
 
-def get_list_followings(api):
+def get_list_followings():
   bfs_path = 'res/init/bfs.txt'
   if(os.path.exists(bfs_path)):
     return open(bfs_path, 'r').read().splitlines()
@@ -36,5 +36,24 @@ def get_list_followings(api):
     ids = open(ids_path, 'r').read().splitlines()
     for elem in ids:
       bfs_file.write(elem + '\n')
-    
+    bfs_file.close()
     return ids
+
+
+def calculateInfoUser(id, api): #calculate all relevant info of a user; to use for the predictions
+  try:
+    followings = list(tweepy.Cursor(api.friends_ids, id = id, wait_on_rate_limit = True, wait_on_rate_limit_notify = True).items())
+  except tweepy.TweepError:
+    return None
+  try:
+    followers = list(tweepy.Cursor(api.followers_ids, id = id, wait_on_rate_limit = True, wait_on_rate_limit_notify = True).items())
+  except tweepy.TweepError:
+    return None
+  intersection = list(set(followers) & set(followings))
+  union = list(set(followers) | set(followings))
+  if(len(union) == 0):
+    erate = 0
+  else:
+    erate = len(intersection)/len(union)
+  return (id,len(followings),len(followers),erate)
+
