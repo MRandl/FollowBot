@@ -28,11 +28,13 @@ def ask_number_followings(warn = ""):
     if warn != "":
       print(warn)
     try:
-      count = int(input("Please enter the number of people you wish to follow today (no more than 50):"))
+      count = int(input("Please enter the number of people you wish to follow today; we advise no more than 15, and it has to be less than 50 : "))
     except ValueError:
       return ask_number_followings()
     if count > 50 or count < 0:
       return ask_number_followings("Enter a valid number")
+    elif count == 0:
+        return -1
     return count
 
 def get_list_followings(api):
@@ -45,6 +47,8 @@ def get_list_followings(api):
     else:
         potential_followings = []
         count = ask_number_followings()
+        if count == -1:
+            return None
         while count > 0:
             screen_name = input("Type the screen name of someone you're thinking of following (it's the name next to the @) : ")
             try:
@@ -57,17 +61,3 @@ def get_list_followings(api):
 
 
 
-"""def get_list_followings():
-    bfs_path = 'res/init/bfs.txt'
-    if os.path.exists(bfs_path):
-        return open(bfs_path, 'r').read().splitlines()
-    else:
-        os.makedirs(os.path.dirname(bfs_path), exist_ok=True)
-        bfs_file = open(bfs_path, 'w')
-
-        ids_path = input('\nPlease enter the inital ids path : \n')
-        ids = open(ids_path, 'r').read().splitlines()
-        for elem in ids:
-            bfs_file.write(elem + '\n')
-        bfs_file.close()
-        return ids"""
