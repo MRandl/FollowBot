@@ -1,6 +1,6 @@
-#Followbot
+# Followbot
 
-##Introduction
+## Introduction
 
 Followbot is a proof-of-concept software we developed in the context of our bachelor semester project "Followback prediction" at EPFL in the LSIR lab.
 
@@ -14,13 +14,13 @@ To be able to use the Followbot, you're going to need a few things:
 - Python installed
 - An approved Twitter developer account and the corresponding key, to be able to get information about the users (followers, followings, etc)
 
-#####A Python environment with the following packages:
+##### A Python environment with the following packages:
 
 - Tweepy
 - Pandas
 - Numpy
 - Joblib
-##How it works
+## How it works
 
 Here is a brief explanation of how Followbot proceeds:
 
@@ -34,11 +34,11 @@ if you followed people using this bot before, it will check whether they followe
 Step 3: after you are done, you must follow the users manually. Relaunch Followbot after a few days in order to let the potential followbacks happen
 
 
-##How to launch
+## How to launch
 
 Simply go to the "src" directory in your terminal and launch the main program with "python main.py" or "python3 main.py". You may need to launch this from an environment with the required packages.
 
-##Authors
+## Authors
 @AttiaYoussef
 
 @MRandl
