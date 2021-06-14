@@ -8,7 +8,7 @@ In this project, our goal was to develop a framework that would predict whether 
 
 This repository contains a wrapper for the final product of the project; how it works is explained below.
 
-##Requirements
+## Requirements
 
 To be able to use the Followbot, you're going to need a few things:
 - Python installed
