@@ -28,10 +28,10 @@ Step 1: If it is the first time you use it, the bot will ask you for your develo
 
 Step 2: In this step, you either:
 
-are asked to enter a list of screen names of the people you wish to follow; the bot will then decide if those people are likely to followback or not.
-if you followed people using this bot before, it will check whether they followed back or not. If at least one user did, the bot will propose a list of at most 15 people to follow using a Breadth First Search search algorithm; it is up to you to accept or not. If you refuse or if nobody followed you back, you will be asked to type in names once more. Either way, the bot will learn from this experience by fitting the new data.
+- are asked to enter a list of screen names of the people you wish to follow; the bot will then decide if those people are likely to followback or not.
+- if you followed people using this bot before, it will check whether they followed back or not. If at least one user did, the bot will propose a list of at most 15 people to follow using a Breadth First Search search algorithm; it is up to you to accept or not. If you refuse or if nobody followed you back, you will be asked to type in names once more. Either way, the bot will learn from this experience by fitting the new data.
 
-Step 3: after you are done, you must follow the users manually. Relaunch Followbot after a few days in order to let the potential followbacks happen
+Step 3: after you are done, you must follow the users manually. Relaunch Followbot after a few days in order to let the potential followbacks happen and get the results.
 
 
 ## How to launch
